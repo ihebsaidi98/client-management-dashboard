@@ -1,0 +1,68 @@
+<div class="form-container">
+  <h2 class="form-title">Ajouter Personne</h2>
+  <form [formGroup]="personneForm" (ngSubmit)="addPersonne()">
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Nom</mat-label>
+      <input matInput formControlName="personneNom">
+      <mat-error *ngIf="personneForm?.get('personneNom')?.hasError('required')">Veuillez entrer un nom</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Prénom</mat-label>
+
+      <input matInput formControlName="personnePrenom" >
+      <mat-error *ngIf="personneForm?.get('personnePrenom')?.hasError('required')">Veuillez entrer un prénom</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Date de naissance</mat-label>
+      <input matInput type="date" formControlName="personneDateNaissance">
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="personneMail"   placeholder="example@example.com">
+      <mat-error *ngIf="personneForm?.get('personneMail')?.hasError('required')">Ce champ est requis</mat-error>
+      <mat-error *ngIf="personneForm?.get('personneMail')?.hasError('email')">Veuillez entrer une adresse e-mail valide</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Numéro de téléphone</mat-label>
+      <input matInput type="tel" formControlName="numTel"     placeholder="Ex: +123 4567890 ou 0011 234567890"
+      >
+      <mat-error *ngIf="personneForm?.get('numTel')?.hasError('required')">Ce champ est requis</mat-error>
+      <mat-error *ngIf="personneForm?.get('numTel')?.hasError('pattern')">Veuillez entrer un numéro de téléphone valide</mat-error>
+    </mat-form-field>
+
+
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Gouvernorat</mat-label>
+      <mat-select formControlName="selectedGouvernorat" (selectionChange)="onGouvernoratChange()">
+        <mat-option *ngFor="let gouvernorat of gouvernorats" [value]="gouvernorat">
+          {{ gouvernorat?.nomg }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="personneForm.get('selectedGouvernorat')?.hasError('required')">
+        Gouvernorat est requis
+      </mat-error>
+    </mat-form-field>
+
+    <!-- Champ pour la ville (mis à jour en fonction du gouvernorat sélectionné) -->
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Ville</mat-label>
+      <mat-select formControlName="selectedVille">
+        <mat-option *ngFor="let ville of filteredVilles" [value]="ville">
+          {{ ville.nom }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="form-button" type="submit" [disabled]="!personneForm.valid  ">
+      Ajouter
+    </button>
+
+    <button mat-raised-button color="secondary" class="form-button" type="button" (click)="cancelAdd()">
+      Annuler
+    </button>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+<div class="gouvernorat-details">
+  <h2 class="details-title">Gouvernorat Details</h2>
+  <ng-container *ngIf="gouvernorat">
+    <div class="detail-row">
+      <strong class="detail-label">Nom:</strong>
+      <span class="detail-value">{{ gouvernorat.nomg }}</span>
+    </div>
+    <div class="detail-row">
+      <strong class="detail-label">Description:</strong>
+      <span class="detail-value">{{ gouvernorat.description }}</span>
+    </div>
+    <!-- Add more details as needed -->
+
+    <button mat-raised-button color="primary" class="return-button" (click)="goBack()">Retour</button>
+  </ng-container>
+</div>

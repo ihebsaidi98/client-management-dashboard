@@ -1,0 +1,33 @@
+<!-- ville-update-component.component.html -->
+<div class="form-container">
+  <h2 class="form-title">Mettre à jour Ville</h2>
+  <form [formGroup]="updateVilleForm" (ngSubmit)="onUpdateClick()">
+    <mat-form-field class="form-field">
+      <mat-label>Nom</mat-label>
+      <input matInput formControlName="nom">
+      <mat-error *ngIf="hasError('nom', 'required')">Veuillez entrer un nom</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Description</mat-label>
+      <input matInput formControlName="description">
+      <mat-error *ngIf="hasError('description', 'required')">Veuillez entrer une description</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Gouvernorat</mat-label>
+      <mat-select formControlName="gouvernoratName" required>
+        <mat-option *ngFor="let gouvernoratName of existingGouvernoratNames" [value]="gouvernoratName">{{ gouvernoratName }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="hasError('gouvernoratName', 'required')">
+        Veuillez sélectionner un Gouvernorat
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="form-button" type="submit" [disabled]="!isFormValid()">
+Modifier    </button>
+    <button mat-raised-button color="secondary" class="form-button" type="button" (click)="onCancelClick()">
+      Annuler
+    </button>
+  </form>
+</div>

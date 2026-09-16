@@ -1,0 +1,63 @@
+<mat-toolbar color="primary" class="mat-toolbar">
+  <div class="nav-container">
+    <div class="flex-grow">
+      <!-- Add a toggleSidebar function call -->
+      <button (click)="toggleSidebar()" mat-icon-button class="example-icon" aria-label="Toggle Sidebar">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+
+    <!-- Customized search field container -->
+    <div class="d-flex search-form" role="search"> <!-- Added d-flex class -->
+      <input cFormControl type="search" placeholder="Search" aria-label="Search" class="me-2 search-input">
+      <button cButton color="success" variant="outline" class="search-button">
+        <mat-icon>search</mat-icon> <!-- Add the search icon here -->
+      </button>
+    </div>
+  </div>
+  <div class="social-icons">
+    <a cNavbarBrand href="https://www.linkedin.com/in/iheb-saidi-9531461a0/" target="_blank" class="coreui-brand">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a cNavbarBrand href="https://www.facebook.com/your-profile-link" target="_blank" class="coreui-brand">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a cNavbarBrand href="https://github.com/ihebsaidi98" target="_blank" class="coreui-brand">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+</mat-toolbar>
+
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer mode="side" [opened]="isSidebarOpen">
+    <mat-list role="list">
+      <mat-list-item role="listitem" (click)="toggleSidebar(); navigateTo('/personne')">
+        <mat-icon>person</mat-icon>
+        <span><b>Personne</b></span>
+      </mat-list-item>
+      <mat-list-item role="listitem" (click)="toggleSidebar(); navigateTo('/villes')">
+        <mat-icon>location_city</mat-icon>
+        <span><b>Ville</b></span>
+      </mat-list-item>
+      <mat-list-item role="listitem" (click)="toggleSidebar(); navigateTo('/gouvernorats')">
+        <mat-icon>business</mat-icon>
+        <span><b>Gouvernorat</b></span>
+      </mat-list-item>
+      <mat-list-item role="listitem" (click)="toggleSidebar(); navigateTo('/statistics')">
+        <mat-icon>insert_chart</mat-icon>
+        <span><b>Statistics</b></span>
+      </mat-list-item>
+
+    </mat-list>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <!-- Content of the HeaderComponent -->
+    <ng-content></ng-content>
+
+    <!-- Content of the Sidebar and Page Content -->
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

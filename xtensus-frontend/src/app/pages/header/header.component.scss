@@ -1,0 +1,97 @@
+/* dashboard.component.scss */
+
+/* Style the toolbar */
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px; /* Add padding to the toolbar */
+}
+
+.mat-toolbar .nav-container {
+  display: flex;
+  align-items: center;
+}
+
+.mat-toolbar .example-icon {
+  margin-right: 16px;
+}
+
+.coreui-brand {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  margin-right: auto; /* Push the social icons to the right */
+}
+
+.search-form {
+  margin-left: 16px; /* Add margin to separate the search field */
+  display: flex;
+  align-items: center; /* Vertically center the input and button */
+}
+
+.search-input {
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 15px;
+  margin-right: 8px; /* Add space between input and button */
+}
+
+.search-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0; /* Remove padding to make the icon centered */
+}
+
+/* Style the search icon */
+.search-button mat-icon {
+  font-size: 25px;
+  color: #ffffff;
+}
+
+/* Add hover effect to the icon */
+.search-button:hover mat-icon {
+  color: #007bff;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Optionally, you can style the icons individually */
+.social-icons i {
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Style for the sidebar */
+.mat-drawer {
+  width: 250px;
+}
+
+.mat-list-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px; /* Adjust padding as needed */
+  transition: background-color 0.3s ease;
+}
+
+.mat-list-item:hover {
+  background-color: #f0f0f0;
+}
+
+.mat-icon {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Style for the text */
+.mat-list-text {
+  font-size: 16px;
+  font-weight: bold;
+}

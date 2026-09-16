@@ -1,0 +1,52 @@
+/* gouvernorat-crud.component.scss */
+
+.container {
+  padding: 20px; /* Adjust padding as needed */
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px; /* Adjust the gap between buttons as needed */
+}
+
+/* Style for individual action buttons */
+.btn-action {
+  min-width: 20; /* Adjust button width as needed */
+  height: 20; /* Adjust button height as needed */
+  padding: 5px 5; /* Adjust padding as needed */
+  font-size: 16px; /* Adjust font size as needed */
+}
+
+/* Style for view button */
+.view-button {
+  background-color: #007bff;
+}
+
+/* Style for edit button */
+.edit-button {
+  background-color: #1a891e;
+  color: #fff; /* Text color for delete button */
+
+}
+
+/* Style for delete button */
+.delete-button {
+  background-color: #F44336; /* Red color, adjust as needed */
+  color: #fff; /* Text color for delete button */
+}
+
+/* Hover effect for buttons */
+.btn-action:hover {
+  filter: brightness(90%); /* Adjust brightness on hover */
+  cursor: pointer;
+}
+
+  .custom-table {
+    width: 40%; /* Set the desired width */
+    font-size: 30px; /* Adjust the font size as needed */
+  }
+
+  .custom-table td,
+.custom-table th {
+  line-height: 2px; /* Increase line height to make rows taller */
+}

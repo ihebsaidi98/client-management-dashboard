@@ -1,0 +1,29 @@
+@Scheduled(fixedRate = 60000)
+public void fixedRateMethod() {
+system.out.println("Method with fixed Rate");
+}
+
+=====> exécuter la méthode toutes les 60 secondes
+
+===================================================
+
+@Scheduled(fixedDelay = 60000)
+public void fixedDelayMethod() {
+system.out.println("Method with fixed delay");
+}
+
+==>Les tâches sont déclenchées avec un retard de 60 secondes.
+
+===================================================
+
+@Scheduled(cron = "1/60 2 3 4 5 6" )
+public void cronMethod() {
+system.out.println("Method with cron expression");
+}
+
+1 : secondes (0-59)
+2 : minutes (0-59)
+3 : heure (0-23)
+4 : Jour (0-31)
+5 : Mois (0-12 or JAN-DEC)
+6 : jour de semaine (0-7 or MON-SUN)

@@ -1,0 +1,38 @@
+/* Add these styles to your global styles file (e.g., styles.scss) */
+
+/* Style for the details container */
+.gouvernorat-details {
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the details title */
+.details-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Style for detail rows */
+.detail-row {
+  margin-bottom: 10px;
+}
+
+/* Style for detail labels */
+.detail-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Style for detail values */
+.detail-value {
+  font-weight: normal;
+}
+
+/* Style for the return button */
+.return-button {
+  margin-top: 20px;
+}

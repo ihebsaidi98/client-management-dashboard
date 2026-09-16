@@ -1,0 +1,75 @@
+<div class="form-container">
+  <h2 class="form-title">Modifier Personne</h2>
+  <form class="form" [formGroup]="updatePersonneForm" novalidate (ngSubmit)="onUpdateClick()">
+    <mat-form-field class="form-field">
+      <mat-label>Nom</mat-label>
+      <input matInput type="text" formControlName="personneNom" required>
+      <mat-error *ngIf="hasError('personneNom', 'required')">
+        Veuillez entrer un nom
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Prénom</mat-label>
+      <input matInput type="text" formControlName="personnePrenom" required>
+      <mat-error *ngIf="hasError('personnePrenom', 'required')">
+        Veuillez entrer un prénom
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Date de naissance</mat-label>
+      <input matInput type="date" formControlName="personneDateNaissance">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="personneMail" required>
+      <mat-error *ngIf="hasError('personneMail', 'required')">
+        Veuillez entrer une adresse e-mail valide
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Numéro de téléphone</mat-label>
+      <input matInput type="tel" formControlName="numTel" placeholder="Ex: +1 234567890 ou 001 1234567890">
+      <mat-error *ngIf="hasError('numTel', 'required')">
+        Ce champ est requis
+      </mat-error>
+      <mat-error *ngIf="hasError('numTel', 'pattern')">
+        Veuillez entrer un numéro de téléphone valide
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field class="form-field">
+      <mat-label>Ville</mat-label>
+      <mat-select formControlName="villeName" required>
+        <mat-option *ngFor="let villeName of existingVilleNames" [value]="villeName">{{ villeName }}</mat-option>
+      </mat-select>
+      <mat-error *ngIf="hasError('villeName', 'required')">
+        Veuillez sélectionner une ville
+      </mat-error>
+    </mat-form-field>
+
+   <!-- <mat-form-field class="form-field">
+      <mat-label>Ville</mat-label>
+      <input matInput type="text" formControlName="villeName">
+      <mat-error *ngIf="updatePersonneForm.get('villeName')?.invalid && updatePersonneForm.get('villeName')?.touched">
+        Veuillez entrer une ville valide
+      </mat-error>
+    </mat-form-field>-->
+
+ <!--<select formControlName="villeName">
+      <option *ngFor="let villeName of existingVilleNames" [value]="villeName">{{ villeName }}</option>
+    </select>-->
+
+
+
+    <button mat-raised-button color="primary" class="form-button" type="submit" [disabled]="!isFormValid()">
+      Modifier
+    </button>
+    <button mat-raised-button color="secondary" class="form-button" type="button" (click)="onCancelClick()">
+      Annuler
+    </button>
+  </form>
+
+
+
+</div>

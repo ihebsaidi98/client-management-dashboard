@@ -1,0 +1,26 @@
+/* Style for the card container */
+.custom-form {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style for the card title */
+  .card-title {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* Style for form fields */
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  /* Style for buttons */
+  .custom-button {
+    margin-right: 10px;
+  }
+  

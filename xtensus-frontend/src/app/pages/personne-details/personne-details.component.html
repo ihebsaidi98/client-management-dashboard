@@ -1,0 +1,34 @@
+<div class="personne-details">
+  <h2 class="details-title">Personne Details</h2>
+  <ng-container *ngIf="personne">
+    <div class="detail-row">
+      <strong class="detail-label">Nom:</strong>
+      <span class="detail-value">{{ personne.personneNom }}</span>
+    </div>
+    <div class="detail-row">
+      <strong class="detail-label">Prénom:</strong>
+      <span class="detail-value">{{ personne.personnePrenom }}</span>
+    </div>
+    <div class="detail-row">
+      <strong class="detail-label">Date de naissance:</strong>
+      <span class="detail-value">{{ personne.personneDateNaissance | date:'dd/MM/yyyy' }}</span>
+    </div>
+    <div class="detail-row">
+      <strong class="detail-label">Email:</strong>
+      <span class="detail-value">{{ personne.personneMail }}</span>
+    </div>
+    <div class="detail-row">
+      <strong class="detail-label">Numéro de téléphone:</strong>
+      <span class="detail-value">{{ personne.numTel }}</span>
+    </div>
+    <div class="detail-row">
+      <strong class="detail-label">Ville:</strong>
+      <span class="detail-value">{{ villeName }}</span>
+    </div>
+    <div class="detail-row">
+      <strong class="detail-label">Gouvernorat:</strong>
+      <span class="detail-value">{{ personne.ville?.gouvernorat?.nomg }}</span>
+    </div>
+    <button mat-raised-button color="primary" class="return-button" (click)="goBack()">Retour</button>
+  </ng-container>
+</div>

@@ -1,0 +1,23 @@
+<div class="form-container">
+  <h2 class="form-title">Ajouter Gouvernorat</h2>
+  <form [formGroup]="gouvernoratForm" (ngSubmit)="addGouvernorat()">
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Nom</mat-label>
+      <input matInput type="text" formControlName="nomg" placeholder="Saisissez le nom">
+      <mat-error *ngIf="gouvernoratForm?.get('nomg')?.hasError('required')">Veuillez entrer un nom</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field" appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" rows="4" placeholder="Saisissez la description"></textarea>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" class="form-button" type="submit" [disabled]="!gouvernoratForm.valid">
+      Ajouter
+    </button>
+
+    <button mat-raised-button color="secondary" class="form-button" type="button" (click)="cancelAdd()">
+      Annuler
+    </button>
+  </form>
+</div>

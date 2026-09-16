@@ -1,0 +1,39 @@
+<div class="container">
+  <h2 class="my-4">Ajouter Personne</h2>
+  <form class="needs-validation" novalidate (ngSubmit)="addPersonne()">
+  
+      <mat-form-field>
+        <mat-label>Nom:</mat-label>
+        <input matInput type="text" id="personneNom" [(ngModel)]="newPersonne.personneNom" name="personneNom" required>
+        <mat-error *ngIf="!isNomPrenomNotEmpty()">Veuillez entrer nom</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Prénom:</mat-label>
+        <input matInput type="text" id="personnePrenom" [(ngModel)]="newPersonne.personnePrenom" name="personnePrenom" required>
+        <mat-error *ngIf="!isNomPrenomNotEmpty()">Veuillez entrer prénom</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Date de naissance:</mat-label>
+        <input matInput type="date" id="personneDateNaissance" [(ngModel)]="newPersonne.personneDateNaissance" name="personneDateNaissance">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email:</mat-label>
+        <input matInput type="email" id="personneMail" [(ngModel)]="newPersonne.personneMail" name="personneMail" required>
+        <mat-error *ngIf="!isEmailValid()">Veuillez entrer une adresse e-mail valide.</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>numTel:</mat-label>
+        <input matInput type="tel" id="numTel" [(ngModel)]="newPersonne.numTel" name="numTel" required pattern="^\+216\d{8}$">
+        <mat-error *ngIf="!isNumTelValid()">Le numéro de téléphone doit comporter +216 suivi de 8 chiffres.</mat-error>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" class="custom-button" type="submit" [disabled]="!isFormValid()">
+        Ajouter
+      </button>
+      <button mat-raised-button color="secondary" class="custom-button" type="button" (click)="cancelAdd()">
+        Annuler
+      </button>
+    </form>
+  </div>
+  
+  

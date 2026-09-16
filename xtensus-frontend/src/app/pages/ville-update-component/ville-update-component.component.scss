@@ -1,0 +1,57 @@
+/* Add this CSS to your component's stylesheet (e.g., ville-update-component.component.scss) */
+.form-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.mat-error {
+  color: red;
+  font-size: 14px;
+  text-align: left;
+}
+
+.form-button {
+  margin-top: 20px;
+  width: 100%;
+  font-size: 14px; /* Adjust font size as needed */
+  padding: 8px 12px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-button.mat-raised-button.mat-primary {
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.form-button.mat-raised-button.mat-primary:hover {
+  background-color: #0056b3;
+}
+
+.form-button.mat-raised-button.mat-secondary {
+  background-color: #6c757d;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+.form-button.mat-raised-button.mat-secondary:hover {
+  background-color: #545b62;
+}

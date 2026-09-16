@@ -1,0 +1,46 @@
+.personne-details {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .details-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .detail-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .detail-label {
+    color: #333;
+    width: 150px;
+    font-weight: bold;
+    margin-right: 15px;
+  }
+
+  .detail-value {
+    color: #555;
+  }
+
+  .email {
+    color: #007bff;
+  }
+
+  .divider {
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+  }
+
+  .return-button {
+    margin-top: 20px;
+    align-self: flex-start;
+  }

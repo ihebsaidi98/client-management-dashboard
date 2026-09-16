@@ -1,0 +1,19 @@
+<div class="ville-details">
+  <h2 class="details-title">Ville Details</h2>
+  <ng-container *ngIf="ville">
+    <div class="detail-row">
+      <strong class="detail-label">Nom:</strong>
+      <span class="detail-value">{{ ville.nom }}</span>
+    </div>
+    <div class="detail-row">
+      <strong class="detail-label">Description:</strong>
+      <span class="detail-value">{{ ville.description }}</span>
+    </div>
+    <div class="detail-row">
+      <strong class="detail-label">Gouvernorat:</strong>
+      <span class="detail-value">{{ ville.gouvernorat?.nomg }}</span>
+    </div>
+    <!-- Add more details if needed -->
+    <button mat-raised-button color="primary" class="return-button" (click)="goBack()">Retour</button>
+  </ng-container>
+</div>

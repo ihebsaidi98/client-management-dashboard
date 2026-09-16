@@ -1,0 +1,49 @@
+<div class="form-container">
+  <h2 class="form-title">Modifier Personne</h2>
+  <form [formGroup]="updatePersonneForm" (ngSubmit)="onUpdateClick()">
+    <mat-form-field class="form-field">
+      <mat-label>Nom</mat-label>
+      <input matInput type="text" formControlName="personneNom" required>
+      <mat-error *ngIf="updatePersonneForm.get('personneNom')?.hasError('required')">Veuillez entrer un nom</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Prénom</mat-label>
+      <input matInput type="text" formControlName="personnePrenom" required>
+      <mat-error *ngIf="updatePersonneForm.get('personnePrenom')?.hasError('required')">Veuillez entrer un prénom</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Date de naissance</mat-label>
+      <input matInput type="date" formControlName="personneDateNaissance">
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="personneMail" required>
+      <mat-error *ngIf="updatePersonneForm.get('personneMail')?.hasError('required')">Veuillez entrer une adresse e-mail</mat-error>
+      <mat-error *ngIf="updatePersonneForm.get('personneMail')?.hasError('email')">Veuillez entrer une adresse e-mail valide</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="form-field">
+      <mat-label>Numéro de téléphone</mat-label>
+      <input
+        matInput
+        type="tel"
+        formControlName="numTel"
+        pattern="^(\+|00)\d{8}$"
+        placeholder="Ex: +12345678 or 0012345678"
+      >
+      <mat-error *ngIf="updatePersonneForm.get('numTel')?.hasError('pattern')">Le numéro de téléphone doit comporter + ou 00 suivi de 8 chiffres</mat-error>
+    </mat-form-field>
+
+
+
+    <button mat-raised-button color="primary" class="form-button" type="submit" [disabled]="!updatePersonneForm.valid">
+      Enregistrer
+    </button>
+    <button mat-raised-button color="secondary" class="form-button" type="button" (click)="onCancelClick()">
+      Annuler
+    </button>
+  </form>
+</div>

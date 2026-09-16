@@ -1,0 +1,27 @@
+<div class="container">
+  <h2 class="page-title">Modifier Gouvernorat</h2>
+  <form [formGroup]="updateGouvernoratForm" (ngSubmit)="onUpdateClick()">
+    <mat-form-field class="mb-3">
+      <mat-label>Nom</mat-label>
+      <input matInput formControlName="nomg" placeholder="Saisissez le nom" required>
+      <mat-error *ngIf="hasError('nomg', 'required')">Veuillez entrer un nom</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="mb-3">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description" rows="4" placeholder="Saisissez la description"></textarea>
+      <mat-error *ngIf="hasError('description', 'required')">Veuillez entrer une description</mat-error>
+    </mat-form-field>
+
+    <!-- Add form controls for other Gouvernorat attributes here -->
+
+    <div class="d-grid gap-2">
+      <button mat-raised-button color="primary" class="form-button" type="submit" [disabled]="!updateGouvernoratForm.valid">
+        Modifier
+      </button>
+      <button mat-raised-button color="secondary" class="form-button" type="button" (click)="onCancelClick()">
+        Annuler
+      </button>
+    </div>
+  </form>
+</div>
